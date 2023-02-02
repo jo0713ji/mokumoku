@@ -33,6 +33,7 @@ gem 'kaminari', git: 'https://github.com/kaminari/kaminari.git'
 gem 'rails-i18n'
 gem 'ransack'
 gem 'sorcery'
+gem 'pry-byebug'
 
 gem 'factory_bot_rails'
 gem 'faker'
@@ -46,9 +47,6 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rb-readline'
   gem 'rspec-rails'
-  gem 'capybara', '~> 3.23'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
 
 group :development do
@@ -64,6 +62,12 @@ group :development do
   gem 'letter_opener_web'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
+end
+
+group :test do
+  gem 'capybara', '~> 3.23'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 group :production do
