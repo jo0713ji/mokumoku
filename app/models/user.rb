@@ -85,4 +85,9 @@ class User < ApplicationRecord
   def allow_liked_event_notification?
     notification_timings.liked_event.present?
   end
+
+  # あるユーザが引数で渡されたuserにフォローされているか調べるメソッド
+  def is_followed_by?(user)
+    reverse_of_relationships.find_by(following_id: user.id).present?
+  end
 end
